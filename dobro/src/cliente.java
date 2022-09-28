@@ -6,11 +6,6 @@ import java.net.Socket;
 public class cliente extends Thread {
     static int valor = 10;
 
-    @Override
-    public void run() {
-
-    }
-
     public static void main(String[] args) {
 
         try {
@@ -18,7 +13,9 @@ public class cliente extends Thread {
             OutputStream output = cliente.getOutputStream();
 
             DataOutputStream dataOutput = new DataOutputStream(output);
-            System.out.println("Valor mandado: "+valor);
+
+            System.out.println("Valor mandado: " + valor);
+
             dataOutput.write(valor);
             dataOutput.flush();
             dataOutput.close();
